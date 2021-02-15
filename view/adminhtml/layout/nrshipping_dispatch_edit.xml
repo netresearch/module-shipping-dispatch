@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * See LICENSE.md for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.actions.toolbar">
+            <block class="Netresearch\ShippingDispatch\Block\Adminhtml\DispatchEdit\BackButton" name="nrshipping_dispatch_edit_btn_back"/>
+            <block class="Netresearch\ShippingDispatch\Block\Adminhtml\DispatchEdit\DeleteButton" name="nrshipping_dispatch_edit_btn_delete"/>
+            <block class="Netresearch\ShippingDispatch\Block\Adminhtml\DispatchEdit\ManifestButton" name="nrshipping_dispatch_edit_btn_manifest"/>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <container htmlTag="div" htmlClass="admin__page-section-title">
+                <container htmlTag="div" htmlClass="title">
+                    <block class="Magento\Framework\View\Element\Text" name="nrshipping_dispatch_packages_unassigned_title">
+                        <action method="setText">
+                            <argument translate="true" name="text" xsi:type="string">Available Packages</argument>
+                        </action>
+                    </block>
+                </container>
+            </container>
+            <uiComponent name="unassigned_packages_listing"/>
+
+            <container htmlTag="div" htmlClass="admin__page-section-title">
+                <container htmlTag="div" htmlClass="title">
+                    <block class="Magento\Framework\View\Element\Text" name="nrshipping_dispatch_packages_assigned_title">
+                        <action method="setText">
+                            <argument translate="true" name="text" xsi:type="string">Assigned Packages</argument>
+                        </action>
+                    </block>
+                </container>
+            </container>
+            <uiComponent name="assigned_packages_listing"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * See LICENSE.md for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="CreateNewDispatchActionGroup">
+        <amOnPage url="{{AdminDispatchCreatePage.url}}" stepKey="navigateToNewDispatchPage"/>
+        <waitForPageLoad stepKey="waitForNewDispatchPageLoad"/>
+
+        <!-- assert inputs and main action button are visible -->
+        <seeElement selector="{{AdminNewDispatchFormSection.save}}" stepKey="seeSaveAndContinueButton"/>
+        <seeElement selector="{{AdminNewDispatchFormSection.website}}" stepKey="seeWebsiteSelect"/>
+        <seeElement selector="{{AdminNewDispatchFormSection.carrier}}" stepKey="seeCarrierSelect"/>
+
+        <!-- save new dispatch -->
+        <click selector="{{AdminNewDispatchFormSection.save}}" stepKey="clickSaveAndContinue"/>
+        <waitForPageLoad stepKey="waitForEditDispatchPageLoad"/>
+
+        <!-- assert action buttons are visible -->
+        <seeElement selector="{{AdminEditDispatchActionsSection.manifestButton}}" stepKey="seeManifestButton"/>
+        <seeElement selector="{{AdminEditDispatchActionsSection.deleteButton}}" stepKey="seeDeleteButton"/>
+
+        <!-- assert Available Packages grid columns are visible -->
+        <seeElement selector="{{AdminEditDispatchAvailablePackagesSection.columnHeader('Tracking Number')}}" stepKey="seeAvailableTrackingNumberHeader"/>
+        <seeElement selector="{{AdminEditDispatchAvailablePackagesSection.columnHeader('Date')}}" stepKey="seeAvailableDateHeader"/>
+        <seeElement selector="{{AdminEditDispatchAvailablePackagesSection.columnHeader('Shipment #')}}" stepKey="seeAvailableShipmentHeader"/>
+        <seeElement selector="{{AdminEditDispatchAvailablePackagesSection.columnHeader('Order #')}}" stepKey="seeAvailableOrderHeader"/>
+        <seeElement selector="{{AdminEditDispatchAvailablePackagesSection.columnHeader('Ship-to Name')}}" stepKey="seeAvailableShipToNameHeader"/>
+        <seeElement selector="{{AdminEditDispatchAvailablePackagesSection.columnHeader('Shipping Information')}}" stepKey="seeAvailableShippingInformationHeader"/>
+        <seeElement selector="{{AdminEditDispatchAvailablePackagesSection.columnHeader('Purchased From')}}" stepKey="seeAvailablePurchasedFromHeader"/>
+
+        <seeElement selector="{{AdminEditDispatchAssignedPackagesSection.columnHeader('Tracking Number')}}" stepKey="seeAssignedTrackingNumberHeader"/>
+        <seeElement selector="{{AdminEditDispatchAssignedPackagesSection.columnHeader('Date')}}" stepKey="seeAssignedDateHeader"/>
+        <seeElement selector="{{AdminEditDispatchAssignedPackagesSection.columnHeader('Shipment #')}}" stepKey="seeAssignedShipmentHeader"/>
+        <seeElement selector="{{AdminEditDispatchAssignedPackagesSection.columnHeader('Order #')}}" stepKey="seeAssignedOrderHeader"/>
+        <seeElement selector="{{AdminEditDispatchAssignedPackagesSection.columnHeader('Ship-to Name')}}" stepKey="seeAssignedShipToNameHeader"/>
+        <seeElement selector="{{AdminEditDispatchAssignedPackagesSection.columnHeader('Shipping Information')}}" stepKey="seeAssignedShippingInformationHeader"/>
+        <seeElement selector="{{AdminEditDispatchAssignedPackagesSection.columnHeader('Purchased From')}}" stepKey="seeAssignedPurchasedFromHeader"/>
+
+        <!-- delete dispatch -->
+        <click selector="{{AdminEditDispatchActionsSection.deleteButton}}" stepKey="clickDelete"/>
+        <waitForElementVisible selector="{{AdminDeleteDispatchConfirmationModalSection.message}}" stepKey="waitForConfirmModal"/>
+        <click selector="{{AdminDeleteDispatchConfirmationModalSection.ok}}" stepKey="confirmDispatchDelete"/>
+    </actionGroup>
+</actionGroups>

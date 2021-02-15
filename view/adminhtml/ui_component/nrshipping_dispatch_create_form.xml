@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * See LICENSE.md for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">nrshipping_dispatch_create_form.nrshipping_dispatch_create_form_data_source</item>
+            <item name="deps" xsi:type="string">nrshipping_dispatch_create_form.nrshipping_dispatch_create_form_data_source</item>
+        </item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">Netresearch\ShippingDispatch\Block\Adminhtml\DispatchCreate\BackButton</item>
+            <item name="save" xsi:type="string">Netresearch\ShippingDispatch\Block\Adminhtml\DispatchCreate\SaveButton</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">nrshipping_dispatch_create_form</item>
+        </item>
+    </argument>
+    <dataSource name="nrshipping_dispatch_create_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="nrshipping/dispatch/save"/>
+        </settings>
+        <dataProvider class="Netresearch\ShippingDispatch\DataProvider\Dispatch" name="nrshipping_dispatch_create_form_data_source">
+            <settings>
+                <requestFieldName>entity_id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <collapsible>false</collapsible>
+            <label translate="true">Primary Settings</label>
+        </settings>
+        <field name="website_id" formElement="select">
+            <settings>
+                <dataType>int</dataType>
+                <label translate="true">Website</label>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Netresearch\ShippingDispatch\Ui\Component\Form\Website\Options"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+        <field name="carrier_code" formElement="select">
+            <settings>
+                <label translate="true">Carrier</label>
+                <dataType>string</dataType>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Netresearch\ShippingDispatch\Ui\Component\Form\Carrier\Options"/>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+    </fieldset>
+</form>

@@ -1,0 +1,44 @@
+{
+    "name": "netresearch/module-shipping-dispatch",
+    "version": "0.1.0",
+    "type": "magento2-module",
+    "description": "Module for managing parcel dispatches",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "email": "plugins@netresearch.de",
+            "name": "Netresearch DTT GmbH",
+            "role": "Manufacturer",
+            "homepage": "https://www.netresearch.de/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Netresearch\\ShippingDispatch\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    },
+    "require": {
+        "php": "^7.1.3",
+        "magento/framework": "^102.0.0 || ^103.0.0",
+        "magento/module-backend": "^101.0.0 || ^102.0.0",
+        "magento/module-config": "^101.1.0",
+        "magento/module-sales": "^102.0.0 || ^103.0.0",
+        "magento/module-store": "^101.0.0",
+        "magento/module-ui": "^101.1.0",
+        "magento/module-cron": "^100.3.0",
+        "magento/zendframework1": "^1.14.0",
+        "netresearch/config-fields-m2": "^1.2.2",
+        "netresearch/module-shipping-core": "^2.0.0"
+    },
+    "suggest": {
+        "magento/module-scalable-oms": "^100.3.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "0.1.x-dev"
+        }
+    }
+}

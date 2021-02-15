@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="dispatch" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="200" translate="label comment">
+        <label>Dispatch Automation</label>
+        <comment>Configure dispatch manifestation via cron.</comment>
+
+        <field id="assign_packages" showInDefault="1" showInWebsite="1" showInStore="0" sortOrder="10"
+               translate="label button_label" type="Netresearch\ConfigFields\Model\Type\Checkbox">
+            <label>Enable Package Assignment</label>
+            <button_label><![CDATA[Assign new packages to a dispatch.]]></button_label>
+        </field>
+        <field id="enable_manifestation" showInDefault="1" showInWebsite="0" showInStore="0" sortOrder="20"
+               translate="label button_label" type="Netresearch\ConfigFields\Model\Type\Checkbox">
+            <label>Enable Manifestation</label>
+            <button_label><![CDATA[Manifest dispatches via carrier API.]]></button_label>
+        </field>
+        <field id="manifestation_schedule" showInDefault="1" showInWebsite="0" showInStore="0"
+               sortOrder="30"
+               translate="label comment" type="time">
+            <label>Manifestation Schedule</label>
+            <comment>Specify a time to execute the daily manifestation of pending dispatches.</comment>
+            <backend_model>Netresearch\ShippingDispatch\Model\Config\Backend\Cron</backend_model>
+            <depends>
+                <field id="enable_manifestation">1</field>
+            </depends>
+        </field>
+    </group>
+</include>

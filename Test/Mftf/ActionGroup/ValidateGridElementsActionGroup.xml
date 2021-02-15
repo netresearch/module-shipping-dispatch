@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * See LICENSE.md for license details.
+  */
+-->
+<actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
+    <actionGroup name="ValidateGridElementsActionGroup">
+        <seeElement selector="{{AdminDispatchesGridSection.filters}}" stepKey="seeFilterSelector"/>
+        <click selector="{{AdminDispatchesGridSection.filters}}" stepKey="expandFilter"/>
+        <seeElement selector="{{AdminDispatchesGridSection.idFilterFrom}}" stepKey="seeIdFilterFrom"/>
+        <seeElement selector="{{AdminDispatchesGridSection.idFilterTo}}" stepKey="seeIdFilterTo"/>
+        <seeElement selector="{{AdminDispatchesGridSection.dispatchDateFilterFrom}}" stepKey="seeDispatchDateFromFilter"/>
+        <seeElement selector="{{AdminDispatchesGridSection.dispatchDateFilterTo}}" stepKey="seeDispatchDateToFilter"/>
+        <seeElement selector="{{AdminDispatchesGridSection.dispatchWebsiteFilter}}" stepKey="seeWebsiteFilter"/>
+        <seeElement selector="{{AdminDispatchesGridSection.carrierNameFilter}}" stepKey="seeCarrierFilter"/>
+        <seeElement selector="{{AdminDispatchesGridSection.dispatchNumberFilter}}" stepKey="seeDispatchNumberFilter"/>
+        <click stepKey="closeFilter" selector="{{AdminDispatchesGridSection.filters}}"/>
+        <seeElement selector="{{AdminDispatchesGridSection.columnHeader('ID')}}" stepKey="seeIdColumnHeader"/>
+        <seeElement selector="{{AdminDispatchesGridSection.columnHeader('Website')}}" stepKey="seeWebsiteColumnHeader"/>
+        <seeElement selector="{{AdminDispatchesGridSection.columnHeader('Carrier Name')}}" stepKey="seeCarrierColumnHeader"/>
+        <seeElement selector="{{AdminDispatchesGridSection.columnHeader('Number of Packages')}}" stepKey="seeNumberOfPackagesColumnHeader"/>
+        <seeElement selector="{{AdminDispatchesGridSection.columnHeader('Status')}}" stepKey="seeStatusColumnHeader"/>
+        <seeElement selector="{{AdminDispatchesGridSection.columnHeader('Dispatch Number')}}" stepKey="seeDispatchNumberColumnHeader"/>
+        <seeElement selector="{{AdminDispatchesGridSection.columnHeader('Dispatch Date')}}" stepKey="seeDispatchDateColumnHeader"/>
+        <seeElement selector="{{AdminDispatchesGridSection.addNewDispatchButton}}" stepKey="seeAddNewDispatchButton"/>
+    </actionGroup>
+</actionGroups>

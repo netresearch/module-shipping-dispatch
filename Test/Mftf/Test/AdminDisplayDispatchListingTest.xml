@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * See LICENSE.md for license details.
+  */
+-->
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="AdminDisplayDispatchListingTest">
+        <annotations>
+            <group value="dispatches"/>
+            <features value="Parcel Dispatches"/>
+            <stories value="DHLGW-856: Dispatches Listing"/>
+            <title value="Display Dispatches Grid in Admin Panel"/>
+            <description value="Verify that dispatch page contains the grid listing with columns and filters"/>
+            <severity value="CRITICAL"/>
+        </annotations>
+        <before>
+            <actionGroup ref="AdminLoginActionGroup" stepKey="loginAsAdmin"/>
+        </before>
+        <after>
+            <actionGroup ref="AdminLogoutActionGroup" stepKey="logout"/>
+        </after>
+        <comment userInput="-> Perform actual test" stepKey="runTestComment"/>
+
+        <amOnPage url="{{AdminDispatchListingPage.url}}" stepKey="navigateToDispatchListingPage"/>
+        <waitForPageLoad stepKey="waitForDispatchListingPageLoad"/>
+        <actionGroup ref="ValidateGridElementsActionGroup" stepKey="checkAllMainElementsVisible"/>
+    </test>
+</tests>

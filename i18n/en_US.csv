@@ -1,0 +1,61 @@
+Actions,Actions
+"Add New Dispatch","Add New Dispatch"
+"Are you sure you want to delete this dispatch?","Are you sure you want to delete this dispatch?"
+"Assign Packages","Assign Packages"
+"Assign Packages for %1 in %2","Assign Packages for %1 in %2"
+"Assign new packages to a dispatch.","Assign new packages to a dispatch."
+"Assigned Packages","Assigned Packages"
+"Available Packages","Available Packages"
+Back,Back
+Cancelled,Cancelled
+Carrier,Carrier
+"Carrier Name","Carrier Name"
+Complete,Complete
+"Configure dispatch manifestation via cron.","Configure dispatch manifestation via cron."
+Date,Date
+Delete,Delete
+"Dispatch %1","Dispatch %1"
+"Dispatch %1 was successfully deleted.","Dispatch %1 was successfully deleted."
+"Dispatch %1 was successfully manifested.","Dispatch %1 was successfully manifested."
+"Dispatch Automation","Dispatch Automation"
+"Dispatch Date","Dispatch Date"
+"Dispatch Information","Dispatch Information"
+"Dispatch Number","Dispatch Number"
+"Dispatch configuration for %1 is not available.","Dispatch configuration for %1 is not available."
+"Dispatch documentation was updated.","Dispatch documentation was updated."
+Dispatches,Dispatches
+"Document Name","Document Name"
+"Document Type","Document Type"
+Documentation,Documentation
+Download,Download
+Edit,Edit
+"Enable Manifestation","Enable Manifestation"
+"Enable Package Assignment","Enable Package Assignment"
+Failed,Failed
+ID,ID
+Manifest,Manifest
+"Manifest dispatches via carrier API.","Manifest dispatches via carrier API."
+"Manifestation Schedule","Manifestation Schedule"
+"Manifestation error for package %1: %2","Manifestation error for package %1: %2"
+"New Dispatch","New Dispatch"
+"Number of Packages","Number of Packages"
+"Order #","Order #"
+Pending,Pending
+"Primary Settings","Primary Settings"
+Processing,Processing
+"Purchased From","Purchased From"
+"Save and Continue","Save and Continue"
+"Ship-to Name","Ship-to Name"
+"Shipment #","Shipment #"
+"Shipping Information","Shipping Information"
+"Specify a time to execute the daily manifestation of pending dispatches.","Specify a time to execute the daily manifestation of pending dispatches."
+Status,Status
+"This dispatch no longer exists.","This dispatch no longer exists."
+"Tracking Number","Tracking Number"
+"Unable to delete dispatch.","Unable to delete dispatch."
+"Unable to find dispatch document with ID %1.","Unable to find dispatch document with ID %1."
+"Unable to find dispatch with ID %1.","Unable to find dispatch with ID %1."
+"Unable to save dispatch.","Unable to save dispatch."
+"Unassign Packages","Unassign Packages"
+View,View
+Website,Website

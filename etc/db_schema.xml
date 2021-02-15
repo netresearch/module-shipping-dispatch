@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * See LICENSE.md for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="nrshipping_dispatch" resource="sales" engine="innodb" comment="Parcel Dispatches Table">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column xsi:type="smallint" name="website_id" padding="5" unsigned="true" nullable="false" comment="Website ID"/>
+        <column xsi:type="varchar" name="carrier_code" length="255" nullable="false" comment="Carrier Code"/>
+        <column xsi:type="varchar" name="carrier_name" length="255" nullable="false" comment="Carrier Name"/>
+        <column xsi:type="smallint" name="package_qty" padding="5" unsigned="true" default="0" comment="Package Quantity"/>
+        <column xsi:type="varchar" name="status" length="10" comment="Status"/>
+        <column xsi:type="varchar" name="dispatch_number" length="255" nullable="true" comment="Dispatch Number"/>
+        <column xsi:type="timestamp" name="dispatch_date" nullable="true" comment="Dispatch Date"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+
+    <table name="nrshipping_dispatch_package" resource="sales" engine="innodb" comment="Parcel Dispatch Package Table">
+        <column xsi:type="int" name="track_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Track ID"/>
+        <column xsi:type="int" name="dispatch_id" padding="10" unsigned="true" nullable="false" comment="Dispatch ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="track_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="NRSHPP_DISPATCH_PACKAGE_TRACK_ID_SALES_SHIPMENT_TRACK_ENTT_ID"
+                    table="nrshipping_dispatch_package" column="track_id" referenceTable="sales_shipment_track" referenceColumn="entity_id"
+                    onDelete="CASCADE"
+        />
+        <constraint xsi:type="foreign" referenceId="NRSHPP_DISPATCH_PACKAGE_DISPATCH_ID_NRSHPP_DISPATCH_ENTT_ID"
+                    table="nrshipping_dispatch_package" column="dispatch_id" referenceTable="nrshipping_dispatch" referenceColumn="entity_id"
+                    onDelete="CASCADE"
+        />
+    </table>
+
+    <table name="nrshipping_dispatch_document" resource="sales" engine="innodb" comment="Parcel Dispatch Documents Table">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column xsi:type="int" name="dispatch_id" padding="10" unsigned="true" nullable="false" comment="Dispatch ID"/>
+        <column xsi:type="varchar" name="name" length="255" nullable="false" comment="Name"/>
+        <column xsi:type="mediumblob" name="content" nullable="false" comment="Content"/>
+        <column xsi:type="varchar" name="format" length="8" nullable="false" comment="Format"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="NRSHPP_DISPATCH_DOCUMENT_DISPATCH_ID_NRSHPP_DISPATCH_ENTT_ID"
+                    table="nrshipping_dispatch_document" column="dispatch_id" referenceTable="nrshipping_dispatch" referenceColumn="entity_id"
+                    onDelete="CASCADE"
+        />
+    </table>
+ </schema>

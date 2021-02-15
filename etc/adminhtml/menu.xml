@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * See LICENSE.md for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Netresearch_ShippingDispatch::dispatches"
+             title="Dispatches"
+             translate="title"
+             sortOrder="100"
+             module="Netresearch_ShippingDispatch"
+             resource="Netresearch_ShippingDispatch::view"
+             parent="Magento_Sales::sales_operation"
+             action="nrshipping/dispatch/index"/>
+    </menu>
+</config>

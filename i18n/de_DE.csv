@@ -1,0 +1,61 @@
+Actions,Aktionen
+"Add New Dispatch","Neue Abfertigung vorbereiten"
+"Are you sure you want to delete this dispatch?","Sind Sie sicher dass sie diese Paketabfertigung löschen möchten?"
+"Assign Packages","Pakete zuweisen"
+"Assign Packages for %1 in %2","Zuweisen von Paketen für %1 in %2"
+"Assign new packages to a dispatch.","Neue Pakete zu einer Paketabfertigung hinzufügen"
+"Assigned Packages","Zugewiesene Pakete"
+"Available Packages","Verfügbare Pakete"
+Back,Zurück
+Cancelled,Storniert
+Carrier,Carrier
+"Carrier Name",Paketdienst
+Complete,Abgeschlossen
+"Configure dispatch manifestation via cron.","Konfigurieren Sie die Paketabfertigung via Cron."
+Date,Datum
+Delete,Löschen
+"Dispatch %1","Paketabfertigung %1"
+"Dispatch %1 was successfully deleted.","Paketabfertigung %1 wurde erfolgreich storniert."
+"Dispatch %1 was successfully manifested.","Paketabfertigung %1 wurde erfolgreich manifestiert."
+"Dispatch Automation","Automatische Paketabfertigung"
+"Dispatch Date",Abfertigungsdatum
+"Dispatch Information","Informationen zur Paketabfertigung"
+"Dispatch Number",Abfertigungsnummer
+"Dispatch configuration for %1 is not available.","Die Paketabfertigung für %1 ist nicht konfiguriert."
+"Dispatch documentation was updated.","Dokumente für die Paketabfertigung wurden aktualisiert."
+Dispatches,Paketabfertigung
+"Document Name",Dokumentname
+"Document Type",Dokumenttyp
+Documentation,Dokumentation
+Download,Download
+Edit,Bearbeiten
+"Enable Manifestation","Manifestation aktivieren"
+"Enable Package Assignment","Paketzuweisung aktivieren"
+Failed,Fehlgeschlagen
+ID,ID
+Manifest,Abfertigen
+"Manifest dispatches via carrier API.","Paketabfertigungen am Webservice manifestieren"
+"Manifestation Schedule","Zeitpunkt der Manifestierung"
+"Manifestation error for package %1: %2","Fehler beim Abfertigen von Paket %1: %2"
+"New Dispatch","Neue Paketabfertigung"
+"Number of Packages","Anzahl der Pakete"
+"Order #","Bestellung #"
+Pending,Ausstehend
+"Primary Settings",Basisangaben
+Processing,"In Verarbeitung"
+"Purchased From","Gekauft von"
+"Save and Continue","Speichern und fortfahren"
+"Ship-to Name",Empfängername
+"Shipment #","Sendung #"
+"Shipping Information",Versandinformation
+"Specify a time to execute the daily manifestation of pending dispatches.","Geben Sie eine Zeit an, zu der die tägliche Manifestation ausstehender Paketabfertigungen ausgeführt werden soll."
+Status,Status
+"This dispatch no longer exists.","Diese Paketabfertigung existiert nicht."
+"Tracking Number",Sendungsnummer
+"Unable to delete dispatch.","Die Paketabfertigung konnte nicht gelöscht werden."
+"Unable to find dispatch document with ID %1.","Dokument mit ID %1 konnte nicht gefunden werden."
+"Unable to find dispatch with ID %1.","Paketabfertigung mit ID %1 konnte nicht gefunden werden."
+"Unable to save dispatch.","Paketabfertigung kann nicht gespeichert werden."
+"Unassign Packages","Pakete entfernen"
+View,Ansehen
+Website,Webseite

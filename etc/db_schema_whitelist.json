@@ -1,0 +1,41 @@
+{
+    "nrshipping_dispatch": {
+        "column": {
+            "entity_id": true,
+            "website_id": true,
+            "carrier_code": true,
+            "carrier_name": true,
+            "package_qty": true,
+            "status": true,
+            "dispatch_number": true,
+            "dispatch_date": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "nrshipping_dispatch_package": {
+        "column": {
+            "track_id": true,
+            "dispatch_id": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "NRSHPP_DISPATCH_PACKAGE_TRACK_ID_SALES_SHIPMENT_TRACK_ENTT_ID": true,
+            "NRSHPP_DISPATCH_PACKAGE_DISPATCH_ID_NRSHPP_DISPATCH_ENTT_ID": true
+        }
+    },
+    "nrshipping_dispatch_document": {
+        "column": {
+            "entity_id": true,
+            "dispatch_id": true,
+            "name": true,
+            "content": true,
+            "format": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "NRSHPP_DISPATCH_DOCUMENT_DISPATCH_ID_NRSHPP_DISPATCH_ENTT_ID": true
+        }
+    }
+}

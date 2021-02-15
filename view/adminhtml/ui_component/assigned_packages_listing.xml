@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * See LICENSE.md for license details.
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">assigned_packages_listing.assigned_packages_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>assigned_packages_columns</spinner>
+        <deps>
+            <dep>assigned_packages_listing.assigned_packages_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="assigned_packages_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">entity_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+            <filterUrlParams>
+                <param name="dispatch_id">*</param>
+            </filterUrlParams>
+        </settings>
+        <aclResource>Netresearch_ShippingDispatch::edit</aclResource>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="assigned_packages_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>false</sticky>
+        </settings>
+        <paging name="listing_paging">
+            <settings>
+                <pageSize>10</pageSize>
+            </settings>
+        </paging>
+        <massaction name="listing_massaction">
+            <action name="nrshipping_dispatch_unassign" class="Netresearch\ShippingDispatch\Ui\Component\Listing\Control\DispatchAction">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="urlPath" xsi:type="string">nrshipping/dispatch_package/unassign</item>
+                    </item>
+                </argument>
+                <settings>
+                    <label translate="true">Unassign Packages</label>
+                    <type>unassign</type>
+                </settings>
+            </action>
+        </massaction>
+    </listingToolbar>
+    <columns name="assigned_packages_columns">
+        <selectionsColumn name="ids">
+            <settings>
+                <indexField>entity_id</indexField>
+            </settings>
+        </selectionsColumn>
+        <column name="track_number">
+            <settings>
+                <label translate="true">Tracking Number</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <dataType>date</dataType>
+                <label translate="true">Date</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <column name="shipment_increment_id">
+            <settings>
+                <label translate="true">Shipment #</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="order_increment_id">
+            <settings>
+                <label translate="true">Order #</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="ship_to_name">
+            <settings>
+                <label translate="true">Ship-to Name</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="shipping_description">
+            <settings>
+                <label translate="true">Shipping Information</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+        <column name="store_id" class="Magento\Store\Ui\Component\Listing\Column\Store">
+            <settings>
+                <label translate="true">Purchased From</label>
+                <bodyTmpl>ui/grid/cells/html</bodyTmpl>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+    </columns>
+</listing>

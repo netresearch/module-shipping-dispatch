@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ /**
+  * See LICENSE.md for license details.
+  */
+-->
+<pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/PageObject.xsd">
+    <page name="AdminDispatchEditPage" url="nrshipping/dispatch/edit/dispatch/dispatch_id/{{dispatchId}}" area="admin" module="Netresearch_ShippingDispatch">
+        <section name="AdminEditDispatchActionsSection"/>
+        <section name="AdminEditDispatchAssignedPackagesSection"/>
+        <section name="AdminEditDispatchAvailablePackagesSection"/>
+        <section name="AdminDeleteDispatchConfirmationModalSection"/>
+    </page>
+</pages>

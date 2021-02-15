@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * See LICENSE.md for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="AdminNewDispatchFormSection">
+        <element name="save" type="button" selector="button[data-ui-id='save-button']"/>
+        <element name="website" type="select" selector="select[name='website_id']"/>
+        <element name="carrier" type="select" selector="select[name='carrier_code']"/>
+    </section>
+</sections>

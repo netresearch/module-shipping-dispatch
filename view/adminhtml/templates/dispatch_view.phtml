@@ -1,0 +1,70 @@
+<?php
+/**
+ * See LICENSE.md for license details.
+ */
+?>
+<?php
+/** @var \Magento\Backend\Block\Template $block */
+/** @var \Netresearch\ShippingDispatch\ViewModel\DispatchView $viewModel */
+$viewModel = $block->getData('viewModel');
+?>
+
+<section class="admin__page-section dispatch-view">
+    <div class="admin__page-section-title">
+        <span class="title"><?= $block->escapeHtml(__('Dispatch Information')) ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item order-information">
+            <div class="admin__page-section-item-content">
+                <table class="admin__table-secondary order-information-table">
+                    <tr>
+                        <th><?= $block->escapeHtml(__('Status')) ?></th>
+                        <td><?= $block->escapeHtml($viewModel->getDispatchStatus()) ?></td>
+                    </tr>
+                    <tr>
+                        <th><?= $block->escapeHtml(__('Dispatch Number')) ?></th>
+                        <td><?= $block->escapeHtml($viewModel->getDispatchNumber()) ?></td>
+                    </tr>
+                    <tr>
+                        <th><?= $block->escapeHtml(__('Dispatch Date')) ?></th>
+                        <td><?= $block->escapeHtml($viewModel->getDispatchDate()) ?></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php $documents = $viewModel->getDispatchDocuments() ?>
+<?php if (!empty($documents)): ?>
+    <section class="admin__page-section">
+        <div class="admin__page-section-title">
+            <span class="title"><?= $block->escapeHtml(__('Documentation')) ?></span>
+        </div>
+        <div class="admin__page-section-content">
+            <div class="admin__table-wrapper">
+                <table class="data-table admin__table-primary order-tables">
+                    <thead>
+                        <tr class="headings">
+                            <th><?= __('Document Name') ?></th>
+                            <th><?= __('Document Type') ?></th>
+                            <th><?= __('Actions') ?></th>
+                        </tr>
+                    </thead>
+                    <?php $i = 0 ?>
+                    <tbody class="<?= /* @noEscape */ ($i % 2) ? 'even' : 'odd' ?>">
+                    <?php foreach ($documents as $document): ?>
+                    <?php $i++ ?>
+                        <tr>
+                            <?php $link = $viewModel->getDownloadLink($document) ?>
+                            <td><?= $block->escapeHtml($document->getName()) ?></td>
+                            <td><?= $block->escapeHtml($document->getFormat()) ?></td>
+                            <td><a href="<?= $block->escapeUrl($link) ?>"><?= $block->escapeHtml(__('Download')) ?></a></td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>

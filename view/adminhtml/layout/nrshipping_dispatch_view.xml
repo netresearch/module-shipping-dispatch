@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * See LICENSE.md for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.actions.toolbar">
+            <block class="Netresearch\ShippingDispatch\Block\Adminhtml\DispatchEdit\BackButton" name="nrshipping_dispatch_view_btn_back"/>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Magento\Backend\Block\Template" template="Netresearch_ShippingDispatch::dispatch_view.phtml">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Netresearch\ShippingDispatch\ViewModel\DispatchView</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
