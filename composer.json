@@ -1,6 +1,6 @@
 {
     "name": "netresearch/module-shipping-dispatch",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "type": "magento2-module",
     "description": "Module for managing parcel dispatches",
     "license": "OSL-3.0",
@@ -35,10 +35,5 @@
     },
     "suggest": {
         "magento/module-scalable-oms": "^100.3.0"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-develop": "0.1.x-dev"
-        }
     }
 }
