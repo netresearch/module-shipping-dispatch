@@ -31,7 +31,7 @@
         "magento/module-cron": "^100.3.0",
         "magento/zendframework1": "^1.14.0",
         "netresearch/config-fields-m2": "^1.2.2",
-        "netresearch/module-shipping-core": "^2.0.0"
+        "netresearch/module-shipping-core": "^3.0.0"
     },
     "suggest": {
         "magento/module-scalable-oms": "^100.3.0"
